@@ -322,6 +322,10 @@ Leads to weird layout issues*/
   color: white;
 }
 
+.card--primary .badge--primary {
+  background: #126de4;
+}
+
 .card--secondary .card__header {
   background: var(--color-secondary);
   color: white;
@@ -332,6 +336,9 @@ Leads to weird layout issues*/
 }
 
 /* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
 .plan__name {
   color: white;
   font-size: 2.4rem;
@@ -361,6 +368,10 @@ Leads to weird layout issues*/
   margin-bottom: 2rem;
 }
 
+.plan--popular {
+  transform: scale(1.1);
+}
+
 .plan--popular .card__header {
   position: relative;
 }
@@ -372,6 +383,13 @@ Leads to weird layout issues*/
   right: 5%;
   top: -6px;
   width: 40px;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -711,7 +729,6 @@ Leads to weird layout issues*/
   border: 0;
   margin: 4rem auto;
   max-width: 670px;
-
 }
 
 .block-domain__prices {
@@ -729,4 +746,14 @@ Leads to weird layout issues*/
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+
+/* Plans Block */
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
 }
