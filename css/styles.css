@@ -1,5 +1,6 @@
-/* Universal Rules */
+@import './normalize.css';
 
+/* Universal Rules */
 *,
 *::after,
 *::before {

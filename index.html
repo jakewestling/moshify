@@ -17,7 +17,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -25,7 +25,7 @@
 <body>
   <header>
     <nav class="nav collapsible">
-      <a href="/"><img src="img/logo.svg" alt="moshified logo" class="nav__brand"></a>
+      <a aria-label="Moshify" href="/"><img src="img/logo.svg" alt="moshified logo" class="nav__brand"></a>
       <svg class="icon icon--white nav__toggler">
         <use href="img/sprite.svg#menu"></use>
       </svg>
@@ -63,7 +63,7 @@
       </p>
     </header>
     <div class="input-group">
-      <input type="text" class="input" placeholder="Enter domain name here...">
+      <input aria-label="Domain" type="text" class="input" placeholder="Enter domain name here...">
       <button class="btn btn--accent">
         <svg class="icon icon--white">
           <use href="img/sprite.svg#search"></use>
