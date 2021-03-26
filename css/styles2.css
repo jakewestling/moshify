@@ -1,11 +1,3 @@
-/* Universal Rules */
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -17,6 +9,12 @@
   --border-radius: 30px;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 /* Typography */
 ::selection {
   background: var(--color-primary);
@@ -26,9 +24,14 @@
 html {
   font-size: 62.5%;
 }
+
+img {
+  width: 100%;
+}
+
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: var(--color-body);
 }
@@ -42,7 +45,7 @@ h3 {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 6rem;
 }
 
 h2 {
@@ -50,8 +53,9 @@ h2 {
 }
 
 h3 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
@@ -62,12 +66,15 @@ p {
   body {
     font-size: 1.8rem;
   }
+
   h1 {
     font-size: 8rem;
   }
+
   h2 {
     font-size: 4rem;
   }
+
   h3 {
     font-size: 2.4rem;
   }
@@ -84,6 +91,7 @@ a {
   font-size: 2rem;
   font-weight: bold;
 }
+
 .link-arrow::after {
   content: "-->";
   margin-left: 5px;
@@ -101,7 +109,6 @@ a {
 }
 
 /* Badges */
-
 .badge {
   border-radius: 20px;
   font-size: 2rem;
@@ -109,14 +116,15 @@ a {
   padding: 0.5rem 2rem;
   white-space: nowrap;
 }
+
 .badge--primary {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .badge--secondary {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 .badge--small {
@@ -128,6 +136,7 @@ a {
   .badge {
     font-size: 1.5rem;
   }
+
   .badge--small {
     font-size: 1.2rem;
   }
@@ -145,7 +154,7 @@ a {
 }
 
 .list--tick {
-  list-style-image: url(../img/tick.svg);
+  list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
   color: var(--color-headings);
 }
@@ -156,15 +165,15 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
-  .list-tick .list__item {
+  .list--tick .list__item {
     padding-left: 0;
   }
 }
 
 /* Icons */
 .icon {
-  height: 40px;
   width: 40px;
+  height: 40px;
 }
 
 .icon--small {
@@ -177,21 +186,17 @@ a {
 }
 
 .icon--white {
-  fill: white;
+  fill: #fff;
 }
 
 .icon-container {
   background: #f3f9fa;
+  width: 64px;
+  height: 64px;
   border-radius: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 64px;
-  width: 64px;
-}
-
-.icon-container--block {
-  display: block;
 }
 
 .icon-container--accent {
@@ -202,11 +207,11 @@ a {
 .btn {
   border-radius: 40px;
   border: 0;
-  outline: 0;
   cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
+  outline: 0;
   padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
@@ -220,34 +225,33 @@ a {
   vertical-align: middle;
 }
 
-.btn--block {
-  display: inline-block;
-  width: 100%;
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
 }
 
-.btn--primary {
-  color: white;
-  background: var(--color-primary);
-}
 .btn--primary:hover {
   background: #3a8ffd;
 }
 
 .btn--secondary {
-  color: white;
   background: var(--color-secondary);
+  color: #fff;
 }
+
 .btn--secondary:hover {
-  background: #00c8eb;
+  background: #05cdf0;
 }
 
 .btn--accent {
-  color: white;
   background: var(--color-accent);
+  color: #fff;
 }
+
 .btn--accent:hover {
   background: #ec3000;
 }
+
 .btn--outline {
   background: #fff;
   color: var(--color-headings);
@@ -255,8 +259,8 @@ a {
 }
 
 .btn--outline:hover {
-  color: white;
   background: var(--color-headings);
+  color: #fff;
 }
 
 .btn--stretched {
@@ -264,10 +268,14 @@ a {
   padding-right: 6rem;
 }
 
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
-    padding: 2rem 3rem;
   }
 }
 
@@ -280,6 +288,7 @@ a {
   outline: 0;
   padding: 1.5rem 3.5rem;
 }
+
 ::placeholder {
   color: #cdcbd7;
 }
@@ -307,16 +316,7 @@ a {
   }
 }
 
-/* Bottom Up Approach
-Build components first
-Then add them to page
-
-Top Down Approach
-Build page first
-Then work on components
-Leads to weird layout issues*/
-
-/* Card */
+/* Cards */
 .card {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
@@ -325,21 +325,21 @@ Leads to weird layout issues*/
 
 .card__header,
 .card__body {
-  padding: 2rem 3rem;
+  padding: 2rem 7%;
 }
 
 .card--primary .card__header {
   background: var(--color-primary);
-  color: white;
-}
-
-.card--primary .badge--primary {
-  background: #126de4;
+  color: #fff;
 }
 
 .card--secondary .card__header {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
+}
+
+.card--primary .badge--primary {
+  background: #126de4;
 }
 
 .card--secondary .badge--secondary {
@@ -350,11 +350,12 @@ Leads to weird layout issues*/
 .plan {
   transition: transform 0.2s ease-out;
 }
+
 .plan__name {
-  color: white;
-  font-size: 2.4rem;
-  font-weight: 500;
+  color: #fff;
   margin: 0;
+  font-weight: 500;
+  font-size: 2.4rem;
 }
 
 .plan__price {
@@ -364,15 +365,15 @@ Leads to weird layout issues*/
 .plan__billing-cycle {
   font-size: 2rem;
   font-weight: 300;
-  margin-right: 1rem;
   opacity: 0.8;
+  margin-right: 1rem;
 }
 
 .plan__description {
-  display: block;
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 1px;
+  display: block;
 }
 
 .plan .list__item {
@@ -384,7 +385,7 @@ Leads to weird layout issues*/
 }
 
 .plan--popular .card__header::before {
-  content: url(../img/popular.svg);
+  content: url(../images/popular.svg);
   width: 40px;
   display: inline-block;
   position: absolute;
@@ -422,36 +423,28 @@ Leads to weird layout issues*/
   }
 }
 
-/* Media Content AKA Media Object */
+/* Media */
 .media {
   display: flex;
   margin-bottom: 4rem;
 }
 
-.media--column {
-  flex-direction: column;
-}
-
-.media--column .media__image {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
-}
-
 .media__title {
   margin-top: 0;
 }
+
 .media__body {
   margin: 0 2rem;
 }
+
 .media__image {
   margin-top: 1rem;
 }
-
 /* Quotes */
 .quote {
-  color: var(--color-body-darker);
   font-size: 3rem;
   font-style: italic;
+  color: var(--color-body-darker);
   line-height: 1.3;
 }
 
@@ -464,16 +457,17 @@ Leads to weird layout issues*/
 }
 
 .quote__author {
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
 }
 
 .quote__organization {
   color: var(--color-headings);
-  font-size: 2rem;
-  font-style: normal;
   opacity: 0.4;
+  font-size: 1.5rem;
+  font-style: normal;
 }
 
 .quote__line {
@@ -486,7 +480,7 @@ Leads to weird layout issues*/
     font-size: 2rem;
   }
 
-  .quote-author {
+  .quote__author {
     font-size: 2.4rem;
   }
 
@@ -517,13 +511,14 @@ Leads to weird layout issues*/
   padding: 3rem;
 }
 
-.testimonial__image {
-  position: relative;
-  margin: 0 5rem;
+.testimonial .quote {
+  margin: 2rem 0;
+  font-size: 110%;
 }
 
-.testimonial__image > img {
-  width: 100%;
+.testimonial__image {
+  position: relative;
+  margin: 0 3rem;
 }
 
 .testimonial__image > .icon-container {
@@ -537,37 +532,33 @@ Leads to weird layout issues*/
     margin: 0;
   }
 
-  .testimonial .quote,
-  .testimonial .quote__author {
-    font-size: 2.4rem;
-  }
-
   .testimonial .quote {
-    margin-left: 6rem;
-    margin-right: 0;
+    margin: 5rem 0 0 6rem;
+    font-size: 120%;
+    line-height: 1.5;
   }
 }
 
-/* Callout */
+/* Callouts */
 .callout {
-  border-radius: 5px;
   padding: 4rem;
+  border-radius: 5px;
 }
 
 .callout--primary {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .callout__heading {
-  color: white;
-  font-size: 3rem;
+  color: #fff;
   margin-top: 0;
+  font-size: 3rem;
 }
 
 .callout .btn {
-  align-self: center;
   justify-self: center;
+  align-self: center;
 }
 
 .callout__content {
@@ -578,6 +569,7 @@ Leads to weird layout issues*/
   .callout .grid--1x2 {
     grid-template-columns: 1fr auto;
   }
+
   .callout__content {
     text-align: left;
   }
@@ -593,16 +585,18 @@ Leads to weird layout issues*/
   display: flex;
   justify-content: space-between;
 }
+
 .collapsible__heading {
   margin-top: 0;
   font-size: 3rem;
 }
+
 .collapsible__chevron {
   transform: rotate(-90deg);
   transition: transform 0.3s;
 }
+
 .collapsible__content {
-  /* display: none; */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -610,25 +604,25 @@ Leads to weird layout issues*/
 }
 
 .collapsible--expanded .collapsible__chevron {
-  transform: rotate(0deg);
-}
-.collapsible--expanded .collapsible__content {
-  /* display: block;
-  TODO: crappy transition... should use JS instead*/
-  max-height: 100vh;
-  opacity: 1;
-  overflow: visible;
+  transform: rotate(0);
 }
 
-/* Blocks & Container */
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* Blocks */
 .block {
-  --padding-vertical: 6rem;
+  --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
 }
+
 .block__header {
   text-align: center;
   margin-bottom: 4rem;
 }
+
 .block__heading {
   margin-top: 0;
 }
@@ -641,17 +635,17 @@ Leads to weird layout issues*/
 .block--dark h1,
 .block--dark h2,
 .block--dark h3 {
-  color: white;
+  color: #fff;
 }
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 }
 
 .container {
@@ -661,16 +655,12 @@ Leads to weird layout issues*/
 
 /* Navigation Bar */
 .nav {
-  background: black;
+  background: #000;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 1rem;
   align-items: center;
-}
-
-.nav__brand {
-  transform: translateY(5px);
 }
 
 .nav__list {
@@ -681,6 +671,10 @@ Leads to weird layout issues*/
 .nav__item {
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
+}
+
+.nav__item:last-of-type {
+  border-bottom: none;
 }
 
 .nav__item > a {
@@ -704,6 +698,11 @@ Leads to weird layout issues*/
   border-radius: 5px;
 }
 
+.nav__brand {
+  transform: translateY(5px);
+  width: 150px;
+}
+
 @media screen and (min-width: 768px) {
   .nav__toggler {
     display: none;
@@ -723,24 +722,24 @@ Leads to weird layout issues*/
 }
 
 /* Hero */
+
 .hero__tagline {
   font-size: 2rem;
-  color: #b9c3c4;
+  color: #b9c3cf;
   letter-spacing: 1px;
   margin: 2rem 0 5rem;
 }
 
-.hero__image {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
-  .hero {
-    padding-top: 0;
-  }
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
   }
 }
 
@@ -794,10 +793,6 @@ Leads to weird layout issues*/
   margin: 1rem 0;
 }
 
-.feature__image {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
@@ -805,10 +800,6 @@ Leads to weird layout issues*/
 }
 
 /* Showcase Block */
-.block-showcase__image > div {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
@@ -827,39 +818,7 @@ Leads to weird layout issues*/
 /* Footer */
 .footer {
   background: #232323;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer__heading {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.footer__section {
-  padding: 2rem;
-  border-bottom: 1px solid #393939;
-}
-
-.footer__section .list {
-  margin: 0;
-}
-
-.footer__brand {
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.footer__brand img {
-  /* TODO: Consider refactoring and applying to all images */
-  width: 100%;
-  max-width: 230px;
-}
-
-.footer__copyright {
-  font-size: 2.1rem;
-  color: #fff;
-  opacity: 0.3;
+  padding-top: 10rem;
 }
 
 .footer a {
@@ -871,7 +830,41 @@ Leads to weird layout issues*/
   color: #fff;
 }
 
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+  margin: 0;
+}
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
 @media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
   .footer__sections {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
