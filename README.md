@@ -4,7 +4,7 @@
 
 ## Description:
 
-Moshify is a cloud hosting website user interface. This beautiful page was developed following a Photoshop design and utilizes a responsive, mobile first design. The architecture is a bottom-up approach which incorporates reusable web components. The production build was done using Parcel JS. Validation, performance, compatibility, accessibility, best practices, and SEO are all measured and optimized. Netlify provides hosting and continuous deployment from Github.
+Moshify is a cloud hosting website user interface. This beautiful page was developed following a Photoshop design and utilizes a responsive, mobile first design. The architecture is a bottom-up approach which incorporates reusable web components. The production build was done using Parcel JS. Validation, performance, compatibility, accessibility, best practices, and SEO are all measured and optimized. Netlify provides hosting and continuous deployment from GitHub.
 
 This project is part of the course The Ultimate HTML5 & CSS3 Series.
 
