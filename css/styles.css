@@ -398,12 +398,17 @@ Leads to weird layout issues*/
 }
 
 .plan--popular:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
+
+
 
 @media screen and (min-width: 1024px) {
   .plan--popular {
     transform: scale(1.1);
+  }
+  .plan--popular:hover {
+    transform: scale(1.15);
   }
 
   .plan__name {
@@ -806,7 +811,8 @@ Leads to weird layout issues*/
 }
 
 /* Showcase Block */
-.block-showcase__image > div {
+
+.block-showcase__image > * {
   width: 100%;
 }
 
